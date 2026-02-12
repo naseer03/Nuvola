@@ -153,7 +153,7 @@ export default function WhyChooseUs() {
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
+        {/* <div className="text-center mb-20">
           <div
             className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
@@ -172,60 +172,8 @@ export default function WhyChooseUs() {
               Proven excellence across years of delivering innovative technology solutions worldwide
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-32">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={`transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
-            >
-              <div className="group relative h-full">
-                {/* Animated background gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${stat.bgColor} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform scale-105`}
-                />
-
-                {/* Card */}
-                <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary/20 h-full flex flex-col">
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <div className="relative inline-block">
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500`}
-                      />
-                      <div
-                        className={`relative w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl`}
-                      >
-                        <stat.icon className="text-white" size={32} />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Counter */}
-                  <div className="mb-4 flex-grow">
-                    <div
-                      className={`text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-br ${stat.color} mb-2`}
-                    >
-                      {stat.value}
-                      {stat.suffix}
-                    </div>
-                    <h3 className="text-xl font-bold text-secondary mb-2">{stat.label}</h3>
-                    <p className="text-sm text-muted-foreground">{stat.description}</p>
-                  </div>
-
-                  {/* Decorative line */}
-                  <div
-                    className={`h-1 bg-gradient-to-r ${stat.color} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left side - Image with floating stats */}

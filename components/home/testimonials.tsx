@@ -165,12 +165,12 @@ export default function Testimonials() {
             </div>
             <div className="w-px h-12 bg-gray-200" />
             <div className="text-left">
-              <div className="text-2xl font-bold text-secondary">500+</div>
+              <div className="text-2xl font-bold text-secondary">80+</div>
               <div className="text-sm text-muted-foreground">Happy Clients</div>
             </div>
             <div className="w-px h-12 bg-gray-200" />
             <div className="text-left">
-              <div className="text-2xl font-bold text-secondary">15+</div>
+              <div className="text-2xl font-bold text-secondary">10+</div>
               <div className="text-sm text-muted-foreground">Years Experience</div>
             </div>
           </div>

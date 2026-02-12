@@ -76,9 +76,9 @@ export default function FeaturedServices() {
     },
     {
       icon: Shield,
-      title: "Security & Compliance",
-      description: "Enterprise-grade security solutions and regulatory compliance consulting.",
-      features: ["Risk Assessment", "Compliance Audits", "Security Hardening"],
+      title: "Application Development",
+      description: "We design and build secure, scalable, and high-performance applications tailored to your business needs.",
+      features: ["PLSQL", "APEX", "Python", "Java", "Streamlit"],
       link: "/services#security",
       gradient: "from-accent/20 via-blue-500/10 to-transparent",
       iconBg: "bg-accent/10",
@@ -116,24 +116,23 @@ export default function FeaturedServices() {
           <div
             className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            <Sparkles className="w-4 h-4" aria-hidden="true" />
-            Expert Solutions
+            Services
           </div>
 
           <h2
             id="services-heading"
             className={`text-4xl lg:text-5xl font-bold text-secondary mb-6 text-balance transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            Transform Your Business with{" "}
+            Comprehensive IT Services from {" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
-              Cutting-Edge Technology
+            Strategy to Support
             </span>
           </h2>
 
           <p
             className={`text-lg text-muted-foreground text-pretty leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            Comprehensive solutions designed to accelerate your digital transformation journey and drive measurable
+            We offer a comprehensive portfolio of services designed to support, optimize, and modernize your IT ecosystem.
             results
           </p>
         </div>

@@ -87,7 +87,7 @@ export default function Navigation() {
             ))}
             <Button
               asChild
-              className="bg-primary hover:bg-primary/90 text-white transition-transform hover:scale-105 duration-300"
+              className="bg-primary hover:bg-primary/90 text-white transition-transform hover:scale-105 duration-300 text-[18px] font-medium"
             >
               <Link href="/contact">Get Started</Link>
             </Button>
@@ -130,7 +130,7 @@ export default function Navigation() {
               ))}
               <Button
                 asChild
-                className="w-full bg-primary hover:bg-primary/90 text-white h-12 text-lg mt-4 touch-manipulation"
+                className="w-full bg-primary hover:bg-primary/90 text-white h-12 text-[18px] font-medium mt-4 touch-manipulation"
               >
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   Get Started

@@ -64,49 +64,20 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-slate-50 to-blue-50/30 pt-16 md:pt-20"
+      className="relative min-h-screen flex items-center overflow-hidden pt-16 md:pt-20"
       aria-label="Hero section"
     >
-      <div className="absolute inset-0 z-0" aria-hidden="true">
-        <div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(239,68,68,0.08),transparent_50%)]"
-          style={!isMobile ? { transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)` } : {}}
-        />
-        <div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(43,75,115,0.08),transparent_50%)]"
-          style={!isMobile ? { transform: `translate(${mousePosition.x * -15}px, ${mousePosition.y * -15}px)` } : {}}
-        />
-
-        {/* Animated grid - hidden on mobile for performance */}
-        <div
-          className="hidden md:block absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: `
-                 linear-gradient(to right, rgba(43, 75, 115, 0.1) 1px, transparent 1px),
-                 linear-gradient(to bottom, rgba(43, 75, 115, 0.1) 1px, transparent 1px)
-               `,
-            backgroundSize: "60px 60px",
-            transform: !isMobile
-              ? `perspective(1000px) rotateX(60deg) scale(2) translateY(-50%) translate(${mousePosition.x * 10}px, ${scrollY * 0.1}px)`
-              : undefined,
-          }}
-        />
-      </div>
-
-      {/* Floating blur orbs */}
+      {/* Background Image */}
       <div
-        className="absolute top-20 left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float-slow opacity-40"
-        style={{ transform: `translate(${mousePosition.x * 30}px, ${mousePosition.y * 30}px)` }}
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/banner-custom-3.png')",
+        }}
+        aria-hidden="true"
       />
-      <div
-        className="absolute bottom-40 right-20 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl animate-float-slow opacity-40"
-        style={{ animationDelay: "2s", transform: `translate(${mousePosition.x * -40}px, ${mousePosition.y * -40}px)` }}
-      />
-      <div
-        className="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/15 rounded-full blur-3xl animate-pulse"
-        style={{ transform: `translate(-50%, -50%) translate(${mousePosition.x * 25}px, ${mousePosition.y * 25}px)` }}
-      />
-
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 z-0  from-black/60 via-black/50 to-black/60" aria-hidden="true" />
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12 sm:py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Left content */}
@@ -235,7 +206,7 @@ export default function Hero() {
               >
                 <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/80">
                   <Image
-                    src="/modern-technology-consulting-office-with-team-coll.jpg"
+                    src="/custom-images/hero.jpg"
                     alt="Nuvola Technology Consulting"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -310,15 +281,21 @@ export default function Hero() {
                   animationDelay: "1.5s",
                 }}
               >
-                <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border-2 border-secondary/20 hover:scale-110 transition-all duration-500 cursor-default">
+                <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border-2 border-yellow-500/30 hover:scale-110 transition-all duration-500 cursor-default">
                   <div className="flex items-center gap-4">
-                    <div className="relative w-16 h-16 bg-gradient-to-br from-secondary to-blue-900 rounded-2xl flex items-center justify-center shadow-lg">
-                      <BarChart className="text-white" size={32} />
-                      <div className="absolute inset-0 border-2 border-white/30 rounded-2xl animate-ping" />
+                    <div className="relative w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center shadow-lg p-2">
+                      <Image
+                        src="/snowflake-logo.png"
+                        alt="Snowflake"
+                        width={32}
+                        height={32}
+                        className="object-contain"
+                      />
+                      <div className="absolute inset-0 border-2 border-yellow-300/50 rounded-2xl animate-ping" />
                     </div>
                     <div>
-                      <div className="text-lg font-bold text-secondary">BI Analytics</div>
-                      <div className="text-sm text-muted-foreground font-medium">Data-Driven</div>
+                      <div className="text-lg font-bold text-secondary">Snowflake</div>
+                      <div className="text-sm text-muted-foreground font-medium">Cloud Data Platform</div>
                     </div>
                   </div>
                 </div>
@@ -355,7 +332,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div
+        {/* <div
           className="mt-16 sm:mt-24 lg:mt-32 pt-8 sm:pt-12 border-t-2 border-gray-200 animate-fade-in"
           style={{ animationDelay: "1s" }}
         >
@@ -382,7 +359,7 @@ export default function Hero() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
