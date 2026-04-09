@@ -2,6 +2,7 @@ import Hero from "@/components/home/hero"
 import FeaturedServices from "@/components/home/featured-services"
 import AboutUs from "@/components/home/about-us"
 import WhyChooseUs from "@/components/home/why-choose-us"
+import Partners from "@/components/home/partners"
 import Philosophy from "@/components/home/philosophy"
 //import GuatemalaTalent from "@/components/home/guatemala-talent"
 //import Clients from "@/components/home/clients"
@@ -18,6 +19,7 @@ export default function Home() {
       <FeaturedServices />
       <AboutUs />
       <WhyChooseUs />
+      <Partners />
       <Philosophy />
       {/* <GuatemalaTalent />
       <Clients />

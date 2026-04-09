@@ -105,17 +105,7 @@ export default function Services() {
       />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6 text-balance">
-            Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
-              Services
-            </span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-            Comprehensive technology solutions tailored to your business needs
-          </p>
-        </div>
+        
 
         <div className="space-y-24 lg:space-y-32">
           {services.map((service, index) => {
