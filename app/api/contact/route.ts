@@ -32,7 +32,7 @@ Submitted: ${new Date().toLocaleString()}
 
     // Example: Send email using a service like SendGrid, Resend, or nodemailer
     // await sendEmail({
-    //   to: 'contact@nuvolaconsulting.com',
+    //   to: 'contact@nuvolacg.com',
     //   subject: `New Lead: ${name} from ${company}`,
     //   text: emailContent,
     // })

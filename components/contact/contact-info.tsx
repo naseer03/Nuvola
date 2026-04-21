@@ -18,8 +18,8 @@ export default function ContactInfo() {
           </div>
           <div>
             <h3 className="font-semibold text-secondary mb-1">Email</h3>
-            <a href="mailto:info@nuvola.com" className="text-muted-foreground hover:text-primary transition-colors">
-              info@nuvola.com
+            <a href="mailto:info@nuvolacg.com" className="text-muted-foreground hover:text-primary transition-colors">
+              info@nuvolacg.com
             </a>
           </div>
         </div>

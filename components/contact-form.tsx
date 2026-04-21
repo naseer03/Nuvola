@@ -200,10 +200,10 @@ export default function ContactForm() {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <a
-                        href="mailto:contact@nuvolaconsulting.com"
+                        href="mailto:contact@nuvolacg.com"
                         className="text-white/90 hover:text-white underline-offset-2 hover:underline transition-all"
                       >
-                        contact@nuvolaconsulting.com
+                        contact@nuvolacg.com
                       </a>
                     </div>
                   </div>
