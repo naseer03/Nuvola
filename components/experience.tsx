@@ -25,7 +25,7 @@ export default function Experience() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <Card className="relative overflow-hidden border-white/20 bg-transparent shadow-lg">
-            <div className="absolute inset-0 z-0" aria-hidden>
+            {/* <div className="absolute inset-0 z-0" aria-hidden>
               <Image
                 src="/contact-communication-technology-global.jpg"
                 alt=""
@@ -34,10 +34,10 @@ export default function Experience() {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-secondary/92 via-secondary/85 to-secondary/95 backdrop-blur-[1px]" />
-            </div>
+            </div> */}
             <CardContent className="relative z-10 p-8 text-center">
-              <Globe className="w-12 h-12 text-primary mx-auto mb-4 drop-shadow-md" />
-              <h3 className="text-2xl font-bold mb-3 drop-shadow-sm">Since 2016</h3>
+              <Globe className="w-12 h-12 text-white mx-auto mb-4 drop-shadow-md" />
+              <h3 className="text-2xl font-bold mb-3 drop-shadow-sm text-white">Since 2016</h3>
               <p className="text-white/90 leading-relaxed drop-shadow-sm">
                 Providing services for Central America, USA & Europe Companies
               </p>
@@ -46,8 +46,8 @@ export default function Experience() {
 
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardContent className="p-8 text-center">
-              <Award className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Master Certified</h3>
+              <Award className="w-12 h-12 text-white mx-auto mb-4" />
+              <h3 className="text-2xl font-bold mb-3 text-white">Master Certified</h3>
               <p className="text-white/80 leading-relaxed">
                 The only company in Guatemala holding Oracle "Master" level certifications
               </p>
@@ -56,8 +56,8 @@ export default function Experience() {
 
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardContent className="p-8 text-center">
-              <Users2 className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Certified Team</h3>
+              <Users2 className="w-12 h-12 text-white mx-auto mb-4" />
+              <h3 className="text-2xl font-bold mb-3 text-white">Certified Team</h3>
               <p className="text-white/80 leading-relaxed">
                 Successfully implemented BI & Analytics projects with fully certified teams
               </p>
