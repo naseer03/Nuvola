@@ -62,6 +62,13 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       })
 
+      let payload: { error?: string } = {}
+      try {
+        payload = (await response.json()) as { error?: string }
+      } catch {
+        /* non-JSON response */
+      }
+
       if (response.ok) {
         toast({
           title: "Message sent successfully!",
@@ -71,12 +78,19 @@ export default function ContactForm() {
         setCaptcha(generateCaptcha())
         setCaptchaInput("")
       } else {
-        throw new Error("Failed to send message")
+        toast({
+          title: "Error sending message",
+          description:
+            typeof payload.error === "string" && payload.error.length > 0
+              ? payload.error
+              : `Something went wrong (${response.status}). Please try again or email info@nuvolacg.com.`,
+          variant: "destructive",
+        })
       }
-    } catch (error) {
+    } catch {
       toast({
         title: "Error sending message",
-        description: "Please try again or contact us directly.",
+        description: "Network error. Check your connection and try again, or email info@nuvolacg.com.",
         variant: "destructive",
       })
     } finally {
