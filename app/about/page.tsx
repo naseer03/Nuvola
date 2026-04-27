@@ -17,7 +17,7 @@ export default function AboutPage() {
       />
       <Experience />
       <Distinctions />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <CTASection />
       <Footer />
     </main>

@@ -31,7 +31,7 @@ export default function ContactInfo() {
           <div>
             <h3 className="font-semibold text-secondary mb-1">Phone</h3>
             <a href="tel:+50212345678" className="text-muted-foreground hover:text-accent transition-colors">
-              +502 1234-5678
+             +502 2213-8772
             </a>
           </div>
         </div>

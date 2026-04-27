@@ -18,12 +18,15 @@ export const metadata: Metadata = {
     "Expert technology consulting in Oracle, Databases, Cloud, Business Analytics & IT Recruitment. Serving Central America, USA & Europe since 2016.",
   keywords:
     "Oracle consulting, Database consulting, Cloud solutions, Business Intelligence, IT recruitment Guatemala, Snowflake consulting",
+  icons: {
+    icon: "/images/nuvola-icon.png",
+  },
   openGraph: {
     title: "Nuvola Consulting Group",
     description: "Technology & Cloud Consulting Excellence",
     type: "website",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({

@@ -42,7 +42,7 @@ export default function Partners() {
         >
           <div className="inline-block mb-4">
             <span className="text-sm font-semibold text-primary uppercase tracking-wider px-4 py-2 bg-primary/10 rounded-full">
-              Partners
+            Partnerships and Community Distinctions 
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary text-balance leading-tight mb-4">
@@ -60,14 +60,14 @@ export default function Partners() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="relative rounded-full shadow-xl shadow-primary/10 ring-1 ring-slate-200/80 bg-white p-2">
+          <div className="relative w-full max-w-5xl bg-gradient-to-r from-white via-slate-50 to-white p-4 sm:p-6 md:p-8 shadow-2xl shadow-primary/10 ring-1 ring-slate-200/80 transition-transform duration-300 hover:-translate-y-1">
             <Image
-              src="/snowflake-partner-badge.png"
+              src="/patners-logo.png"
               alt="Snowflake AI Data Cloud Services Partner — Select tier badge"
-              width={280}
-              height={280}
-              className="rounded-full w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[280px] md:h-[280px]"
-              sizes="(max-width: 640px) 220px, (max-width: 768px) 260px, 280px"
+              width={1400}
+              height={520}
+              className="w-full h-auto object-contain"
+              sizes="(max-width: 1024px) 100vw, 1280px"
               priority={false}
             />
           </div>

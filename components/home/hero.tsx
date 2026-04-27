@@ -238,7 +238,7 @@ export default function Hero() {
                       <div className="absolute -inset-1 bg-primary/30 rounded-2xl blur-md animate-pulse" />
                     </div>
                     <div>
-                      <div className="text-lg font-bold text-secondary">Oracle ACE</div>
+                      <div className="text-lg font-bold text-secondary">Oracle</div>
                       <div className="text-sm text-muted-foreground font-medium flex items-center gap-1">
                         <Award className="w-3 h-3 text-primary" />
                         Certified Expert
@@ -281,9 +281,9 @@ export default function Hero() {
                   animationDelay: "1.5s",
                 }}
               >
-                <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border-2 border-yellow-500/30 hover:scale-110 transition-all duration-500 cursor-default">
+                <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border-2 border-[#2AB6E9] hover:scale-110 transition-all duration-500 cursor-default">
                   <div className="flex items-center gap-4">
-                    <div className="relative w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center shadow-lg p-2">
+                    <div className="relative w-16 h-16 bg-[#2AB6E9] rounded-2xl flex items-center justify-center shadow-lg p-2">
                       <Image
                         src="/snowflake-logo.png"
                         alt="Snowflake"
@@ -291,7 +291,7 @@ export default function Hero() {
                         height={32}
                         className="object-contain"
                       />
-                      <div className="absolute inset-0 border-2 border-yellow-300/50 rounded-2xl animate-ping" />
+                      <div className="absolute inset-0 border-2 border-[#2AB6E9] rounded-2xl animate-ping" />
                     </div>
                     <div>
                       <div className="text-lg font-bold text-secondary">Snowflake</div>
@@ -301,8 +301,36 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Floating icon badges - Layer 4 - Changed Users to Server icon and Sparkles to HardDrive icon */}
+              {/* Left side card - Layer 3 */ }
               <div
+                className="absolute top-14 -left-4 z-20 animate-float"
+                style={{
+                  transform: `translateX(${-scrollY * 0.04}px) translateZ(90px)`,
+                  animationDelay: "0.8s",
+                }}
+              >
+                <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border-2 border-[#F0B100] hover:scale-110 transition-all duration-500 cursor-default">
+                  <div className="flex items-center gap-4">
+                    <div className="relative w-16 h-16 bg-[#F0B100] rounded-2xl flex items-center justify-center shadow-lg p-2">
+                      <Image
+                        src="/AWS-Logo-PNG-Image.png"
+                        alt="Amazon AWS"
+                        width={40}
+                        height={40}
+                        className="object-contain"
+                      />
+                      <div className="absolute inset-0 border-2 border-[#F0B100] rounded-2xl animate-ping" />
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold text-[#F0B100]">Amazon AWS</div>
+                      <div className="text-sm text-muted-foreground font-medium">Cloud Infrastructure</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating icon badges - Layer 4 - Changed Users to Server icon and Sparkles to HardDrive icon */}
+              {/* <div
                 className="absolute top-1/4 -left-8 z-10 w-20 h-20 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center shadow-xl border-2 border-accent/30 hover:scale-125 transition-transform duration-300 animate-float"
                 style={{
                   animationDelay: "0.5s",
@@ -310,7 +338,7 @@ export default function Hero() {
                 }}
               >
                 <Server className="w-10 h-10 text-accent" />
-              </div>
+              </div> */}
 
               <div
                 className="absolute bottom-1/4 right-0 z-10 w-16 h-16 bg-white/80 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-xl border-2 border-secondary/30 hover:scale-125 hover:rotate-12 transition-all duration-300 animate-float"

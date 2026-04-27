@@ -112,7 +112,7 @@ export default function WhyChooseUs() {
     {
       icon: Award,
       title: "Certified Excellence",
-      description: "Oracle ACE status and multiple Oracle certifications demonstrate our technical mastery.",
+      description: "Highest Oracle, Amazon AWS, Google Cloud and Snowflake Certifications demonstrate our Technical Mastery.",
       color: "from-primary to-red-600",
     },
     {

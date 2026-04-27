@@ -1,4 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
+import nodemailer from "nodemailer"
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,16 +27,34 @@ ${message}
 Submitted: ${new Date().toLocaleString()}
     `
 
-    // Here you would integrate with your email service
-    // For now, we'll log it and return success
-    console.log("[v0] New contact form submission:", emailContent)
+    const smtpHost = process.env.SMTP_HOST
+    const smtpPort = Number.parseInt(process.env.SMTP_PORT ?? "587", 10)
+    const smtpUser = process.env.SMTP_USER
+    const smtpPass = process.env.SMTP_PASS
+    const smtpFrom = process.env.SMTP_FROM ?? smtpUser
 
-    // Example: Send email using a service like SendGrid, Resend, or nodemailer
-    // await sendEmail({
-    //   to: 'contact@nuvolacg.com',
-    //   subject: `New Lead: ${name} from ${company}`,
-    //   text: emailContent,
-    // })
+    if (!smtpHost || !smtpUser || !smtpPass || !smtpFrom) {
+      console.error("[contact-api] Missing SMTP configuration")
+      return NextResponse.json({ error: "Email service is not configured" }, { status: 500 })
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+    })
+
+    await transporter.sendMail({
+      from: smtpFrom,
+      to: "info@nuvolacg.com",
+      replyTo: email as string,
+      subject: `New Lead: ${name as string} from ${company as string}`,
+      text: emailContent,
+    })
 
     return NextResponse.json({ success: true, message: "Message sent successfully" }, { status: 200 })
   } catch (error) {

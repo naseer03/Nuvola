@@ -8,15 +8,43 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { useToast } from "@/hooks/use-toast"
-import { Mail, Phone, MapPin, Loader2 } from "lucide-react"
+import { Mail, Phone, MapPin, Loader2, RotateCcw } from "lucide-react"
+
+type Captcha = {
+  question: string
+  answer: number
+}
+
+function generateCaptcha(): Captcha {
+  const first = Math.floor(Math.random() * 8) + 2
+  const second = Math.floor(Math.random() * 8) + 2
+  return {
+    question: `${first} + ${second}`,
+    answer: first + second,
+  }
+}
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [captcha, setCaptcha] = useState<Captcha>(() => generateCaptcha())
+  const [captchaInput, setCaptchaInput] = useState("")
   const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+
+    if (Number.parseInt(captchaInput, 10) !== captcha.answer) {
+      toast({
+        title: "Captcha verification failed",
+        description: "Please solve the captcha correctly and try again.",
+        variant: "destructive",
+      })
+      setCaptcha(generateCaptcha())
+      setCaptchaInput("")
+      setIsSubmitting(false)
+      return
+    }
 
     const formData = new FormData(e.currentTarget)
     const data = {
@@ -37,9 +65,11 @@ export default function ContactForm() {
       if (response.ok) {
         toast({
           title: "Message sent successfully!",
-          description: "We'll get back to you as soon as possible.",
+          description: "Thanks for reaching us we will get back soon.",
         })
         e.currentTarget.reset()
+        setCaptcha(generateCaptcha())
+        setCaptchaInput("")
       } else {
         throw new Error("Failed to send message")
       }
@@ -58,18 +88,18 @@ export default function ContactForm() {
     <section id="contact" className="py-16 sm:py-20 lg:py-32 bg-white" aria-labelledby="contact-heading">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2
+          {/* <h2
             id="contact-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-3 sm:mb-4 text-balance"
           >
             Get in Touch
-          </h2>
+          </h2> */}
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
             Ready to transform your technology infrastructure? Let's start a conversation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 gap-8 sm:gap-10 max-w-4xl mx-auto py-4 pb-4">
           <div>
             <Card className="border-0 shadow-lg h-full">
               <CardHeader>
@@ -169,6 +199,43 @@ export default function ContactForm() {
                     />
                   </div>
 
+                  <div>
+                    <label htmlFor="captcha" className="block text-sm font-medium text-secondary mb-2">
+                      Security Check{" "}
+                      <span className="text-primary" aria-label="required">
+                        *
+                      </span>
+                    </label>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <div className="h-11 sm:h-12 px-4 border-2 border-slate-200 bg-slate-50 flex items-center justify-center text-secondary font-semibold min-w-[140px]">
+                        {captcha.question} = ?
+                      </div>
+                      <Input
+                        id="captcha"
+                        name="captcha"
+                        required
+                        inputMode="numeric"
+                        placeholder="Enter answer"
+                        value={captchaInput}
+                        onChange={(e) => setCaptchaInput(e.target.value)}
+                        className="border-2 focus:border-accent h-11 sm:h-12 text-base"
+                        aria-required="true"
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="h-11 sm:h-12 px-4"
+                        onClick={() => {
+                          setCaptcha(generateCaptcha())
+                          setCaptchaInput("")
+                        }}
+                        aria-label="Refresh captcha"
+                      >
+                        <RotateCcw className="w-4 h-4" aria-hidden="true" />
+                      </Button>
+                    </div>
+                  </div>
+
                   <Button
                     type="submit"
                     disabled={isSubmitting}
@@ -200,10 +267,10 @@ export default function ContactForm() {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <a
-                        href="mailto:contact@nuvolacg.com"
+                        href="mailto:info@nuvolacg.com"
                         className="text-white/90 hover:text-white underline-offset-2 hover:underline transition-all"
                       >
-                        contact@nuvolacg.com
+                        info@nuvolacg.com
                       </a>
                     </div>
                   </div>
@@ -213,10 +280,10 @@ export default function ContactForm() {
                     <div>
                       <h4 className="font-semibold mb-1">Phone</h4>
                       <a
-                        href="tel:+50212345678"
+                        href="tel:+502 2213-8772"
                         className="text-white/90 hover:text-white underline-offset-2 hover:underline transition-all"
                       >
-                        +502 1234-5678
+                        +502 2213-8772
                       </a>
                     </div>
                   </div>
@@ -236,25 +303,6 @@ export default function ContactForm() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-secondary shadow-lg">
-              <CardContent className="p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-secondary mb-4">Office Hours</h3>
-                <div className="space-y-2 text-sm sm:text-base text-muted-foreground">
-                  <p>
-                    <span className="font-semibold text-secondary">Monday - Friday:</span> 8:00 AM - 6:00 PM CST
-                  </p>
-                  <p>
-                    <span className="font-semibold text-secondary">Saturday:</span> 9:00 AM - 1:00 PM CST
-                  </p>
-                  <p>
-                    <span className="font-semibold text-secondary">Sunday:</span> Closed
-                  </p>
-                  <p className="text-xs sm:text-sm mt-4 text-secondary font-medium">
-                    * Emergency support available 24/7 for contracted clients
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

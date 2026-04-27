@@ -87,7 +87,7 @@ export default function AboutUs() {
               </p>
 
               <p className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed">
-                We help businesses keep their technology running and their teams moving forward. Through expert consulting and proactive IT support, Nuvola delivers secure, scalable solutions trusted by companies worldwide since 2016.
+                We help businesses keep their technology running and their teams moving forward. Through expert consulting and proactive IT support, Nuvola delivers secure, scalable solutions trusted by company.
               </p>
 
               {/* Highlights */}
