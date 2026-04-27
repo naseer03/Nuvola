@@ -55,8 +55,6 @@ export default function ContactForm() {
       message: String(formData.get("message") ?? "").trim(),
     }
 
-    const web3AccessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
-
     const showSuccess = () => {
       toast({
         title: "Message sent successfully!",
@@ -68,38 +66,6 @@ export default function ContactForm() {
     }
 
     try {
-      // No SMTP/server env required: set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your host's environment UI (e.g. Vercel).
-      if (web3AccessKey) {
-        const wRes = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            access_key: web3AccessKey,
-            subject: `New lead from nuvolacg.com: ${data.name} (${data.company})`,
-            name: data.name,
-            email: data.email,
-            phone: data.phone,
-            company: data.company,
-            message: data.message,
-            from_name: "Nuvola website",
-          }),
-        })
-        const wJson = (await wRes.json().catch(() => ({}))) as { success?: boolean; message?: string }
-        if (wRes.ok && wJson.success) {
-          showSuccess()
-          return
-        }
-        toast({
-          title: "Error sending message",
-          description:
-            typeof wJson.message === "string" && wJson.message.length > 0
-              ? wJson.message
-              : "Could not send via Web3Forms. Check your access key or email info@nuvolacg.com.",
-          variant: "destructive",
-        })
-        return
-      }
-
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
