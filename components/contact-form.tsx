@@ -48,35 +48,73 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget)
     const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      company: formData.get("company"),
-      message: formData.get("message"),
+      name: String(formData.get("name") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      phone: String(formData.get("phone") ?? "").trim(),
+      company: String(formData.get("company") ?? "").trim(),
+      message: String(formData.get("message") ?? "").trim(),
+    }
+
+    const web3AccessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+
+    const showSuccess = () => {
+      toast({
+        title: "Message sent successfully!",
+        description: "Thanks for reaching us we will get back soon.",
+      })
+      e.currentTarget.reset()
+      setCaptcha(generateCaptcha())
+      setCaptchaInput("")
     }
 
     try {
+      // No SMTP/server env required: set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your host's environment UI (e.g. Vercel).
+      if (web3AccessKey) {
+        const wRes = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            access_key: web3AccessKey,
+            subject: `New lead from nuvolacg.com: ${data.name} (${data.company})`,
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            company: data.company,
+            message: data.message,
+            from_name: "Nuvola website",
+          }),
+        })
+        const wJson = (await wRes.json().catch(() => ({}))) as { success?: boolean; message?: string }
+        if (wRes.ok && wJson.success) {
+          showSuccess()
+          return
+        }
+        toast({
+          title: "Error sending message",
+          description:
+            typeof wJson.message === "string" && wJson.message.length > 0
+              ? wJson.message
+              : "Could not send via Web3Forms. Check your access key or email info@nuvolacg.com.",
+          variant: "destructive",
+        })
+        return
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       })
 
-      let payload: { error?: string } = {}
+      let payload: { error?: string; code?: string } = {}
       try {
-        payload = (await response.json()) as { error?: string }
+        payload = (await response.json()) as { error?: string; code?: string }
       } catch {
         /* non-JSON response */
       }
 
       if (response.ok) {
-        toast({
-          title: "Message sent successfully!",
-          description: "Thanks for reaching us we will get back soon.",
-        })
-        e.currentTarget.reset()
-        setCaptcha(generateCaptcha())
-        setCaptchaInput("")
+        showSuccess()
       } else {
         toast({
           title: "Error sending message",

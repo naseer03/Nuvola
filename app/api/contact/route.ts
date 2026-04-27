@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           error:
-            "The contact form cannot send mail yet (server email is not configured). Please email info@nuvolacg.com directly.",
+            "The contact form cannot send mail yet (no SMTP settings on the server). Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your host’s environment settings, or configure SMTP_HOST / SMTP_USER / SMTP_PASS. You can also email info@nuvolacg.com directly.",
           code: "SMTP_NOT_CONFIGURED",
         },
         { status: 503 },
