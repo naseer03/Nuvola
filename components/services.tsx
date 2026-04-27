@@ -96,7 +96,7 @@ export default function Services() {
     <section
       ref={sectionRef}
       id="services"
-      className="py-24 lg:py-32 bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden"
+      className="py-24 lg:py-32 bg-white relative overflow-hidden"
     >
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl animate-pulse-slow" />
       <div
@@ -182,12 +182,12 @@ export default function Services() {
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-t ${
+                      className={`absolute inset-0 ${
                         service.accentColor === "primary"
-                          ? "from-primary/20 via-transparent to-transparent"
+                          ? "bg-primary/10"
                           : service.accentColor === "accent"
-                            ? "from-accent/20 via-transparent to-transparent"
-                            : "from-secondary/20 via-transparent to-transparent"
+                            ? "bg-accent/10"
+                            : "bg-secondary/10"
                       }`}
                     />
                   </div>

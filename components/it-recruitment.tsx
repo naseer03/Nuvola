@@ -46,7 +46,7 @@ export default function ITRecruitment() {
   ]
 
   return (
-    <section id="recruitment" className="py-20 lg:py-32 bg-gradient-to-br from-red-50/30 to-blue-50/30">
+    <section id="recruitment" className="py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-4 text-balance">

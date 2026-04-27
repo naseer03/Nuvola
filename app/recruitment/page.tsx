@@ -11,7 +11,8 @@ export default function RecruitmentPage() {
       <PageHero
         title="IT Recruitment"
         description="Connecting world-class talent with leading organizations"
-        backgroundImage="/professional-recruitment-hiring-technology.jpg"
+        backgroundImage="/guatemala.jpg"
+        variant="photo"
       />
       <ITRecruitment />
       <CTASection />

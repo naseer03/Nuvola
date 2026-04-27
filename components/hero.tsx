@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-gradient-to-br from-white via-blue-50/30 to-red-50/20">
+    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl lg:text-7xl font-bold text-secondary mb-6 leading-tight text-balance">

@@ -97,7 +97,7 @@ export default function Philosophy() {
             className={`text-4xl lg:text-5xl font-bold text-secondary mb-6 text-balance transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
+            <span className="text-primary">
               Philosophy
             </span>
           </h2>
@@ -127,7 +127,7 @@ export default function Philosophy() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-black/20" />
               </div>
 
               <CardContent className="p-6 relative">

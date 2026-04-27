@@ -257,7 +257,7 @@ export default function ContactForm() {
           </div>
 
           <div className="space-y-6 sm:space-y-8">
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-secondary to-secondary/90 text-white">
+            <Card className="border-0 shadow-lg bg-secondary text-white">
               <CardContent className="p-6 sm:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold mb-6">Contact Information</h3>
 

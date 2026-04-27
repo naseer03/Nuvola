@@ -62,7 +62,7 @@ export default function OracleCertifications() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary text-balance leading-tight mb-4">
             Oracle <span className="text-primary">Certifications</span>
           </h2>
-          <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6" />
+          <div className="h-1.5 w-24 bg-primary rounded-full mx-auto mb-6" />
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-12">
             Recognized certifications across Oracle Database, RAC, Exadata, Linux, and performance tuning specialties.
           </p>

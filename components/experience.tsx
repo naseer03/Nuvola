@@ -13,7 +13,7 @@ export default function Experience() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/88 to-secondary/95" />
+        <div className="absolute inset-0 bg-secondary/90" />
       </div>
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">

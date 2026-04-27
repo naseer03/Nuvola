@@ -4,8 +4,8 @@ import Link from "next/link"
 
 export default function CTASection() {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-secondary via-secondary to-primary relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(255,255,255,0.1),transparent_50%)]" />
+    <section className="py-20 lg:py-32 bg-secondary relative overflow-hidden">
+      <div className="absolute inset-0 bg-white/5" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">

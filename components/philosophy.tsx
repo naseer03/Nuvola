@@ -38,7 +38,7 @@ export default function Philosophy() {
   ]
 
   return (
-    <section id="philosophy" className="py-20 lg:py-32 bg-gradient-to-br from-blue-50/50 to-white">
+    <section id="philosophy" className="py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-4 text-balance">Our Philosophy</h2>

@@ -75,8 +75,8 @@ export default function WhyChooseUs() {
       value: counts.years,
       suffix: "+",
       label: "Years of Excellence",
-      color: "from-primary via-red-500 to-red-600",
-      bgColor: "from-primary/10 to-red-50",
+      color: "bg-primary",
+      bgColor: "bg-primary/10",
       description: "Industry experience",
     },
     {
@@ -84,8 +84,8 @@ export default function WhyChooseUs() {
       value: counts.projects,
       suffix: "+",
       label: "Successful Projects",
-      color: "from-secondary via-blue-600 to-blue-700",
-      bgColor: "from-secondary/10 to-blue-50",
+      color: "bg-secondary",
+      bgColor: "bg-secondary/10",
       description: "Delivered with excellence",
     },
     {
@@ -93,8 +93,8 @@ export default function WhyChooseUs() {
       value: counts.clients,
       suffix: "",
       label: "Continents",
-      color: "from-accent via-blue-500 to-cyan-600",
-      bgColor: "from-accent/10 to-blue-50",
+      color: "bg-accent",
+      bgColor: "bg-accent/10",
       description: "Global presence",
     },
     {
@@ -102,8 +102,8 @@ export default function WhyChooseUs() {
       value: counts.satisfaction,
       suffix: "%",
       label: "Client Satisfaction",
-      color: "from-primary via-red-500 to-pink-600",
-      bgColor: "from-primary/10 to-red-50",
+      color: "bg-primary",
+      bgColor: "bg-primary/10",
       description: "Customer success rate",
     },
   ]
@@ -113,32 +113,32 @@ export default function WhyChooseUs() {
       icon: Award,
       title: "Certified Excellence",
       description: "Highest Oracle, Amazon AWS, Google Cloud and Snowflake Certifications demonstrate our Technical Mastery.",
-      color: "from-primary to-red-600",
+      color: "bg-primary",
     },
     {
       icon: Globe,
       title: "Global Reach",
       description: "Operating across Central America, USA, and Europe with local expertise.",
-      color: "from-accent to-blue-600",
+      color: "bg-accent",
     },
     {
       icon: HeartHandshake,
       title: "Client-Focused",
       description: "100% client satisfaction through personalized solutions and dedicated support.",
-      color: "from-secondary to-blue-900",
+      color: "bg-secondary",
     },
     {
       icon: Rocket,
       title: "Innovation Driven",
       description: "Staying ahead with cutting-edge technologies and industry best practices.",
-      color: "from-primary to-red-600",
+      color: "bg-primary",
     },
   ]
 
   return (
     <section
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden"
+      className="py-24 lg:py-32 bg-white relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-full h-full opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
@@ -183,7 +183,7 @@ export default function WhyChooseUs() {
             <div className="relative lg:pr-8">
               {/* Main image */}
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-primary/30 rounded-3xl blur-2xl transform scale-105" />
+                <div className="absolute inset-0 bg-accent/20 rounded-3xl blur-2xl transform scale-105" />
                 <div className="aspect-[3/4] lg:aspect-[4/5] relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 transform hover:scale-[1.02] transition-transform duration-500">
                   <Image
                     src="/professional-business-team-technology-consulting.jpg"
@@ -191,7 +191,7 @@ export default function WhyChooseUs() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 via-transparent to-primary/30 mix-blend-overlay" />
+                  <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay" />
                 </div>
               </div>
 
@@ -205,7 +205,7 @@ export default function WhyChooseUs() {
                     {[primary, secondary, accent].map((color, i) => (
                       <div
                         key={i}
-                        className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 border-white bg-gradient-to-br from-${color}/80 to-${color} flex items-center justify-center`}
+                        className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 border-white bg-${color} flex items-center justify-center`}
                       >
                         <CheckCircle className="text-white" size={16} />
                       </div>
@@ -235,7 +235,7 @@ export default function WhyChooseUs() {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary text-balance leading-tight mb-4">
                   Why Choose <span className="text-primary">Nuvola?</span>
                 </h2>
-                <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-accent rounded-full" />
+                <div className="h-1.5 w-24 bg-primary rounded-full" />
               </div>
 
               <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-10 leading-relaxed">
@@ -254,10 +254,10 @@ export default function WhyChooseUs() {
                     <div className="relative flex gap-4 lg:gap-5 items-start p-5 lg:p-6 rounded-2xl bg-white/50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/30">
                       <div className="relative flex-shrink-0">
                         <div
-                          className={`absolute inset-0 bg-gradient-to-br ${reason.color} rounded-xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500`}
+                          className={`absolute inset-0 ${reason.color} rounded-xl blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500`}
                         />
                         <div
-                          className={`relative w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br ${reason.color} rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}
+                          className={`relative w-12 h-12 lg:w-14 lg:h-14 ${reason.color} rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}
                         >
                           <reason.icon className="text-white" size={24} />
                         </div>

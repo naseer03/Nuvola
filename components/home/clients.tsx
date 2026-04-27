@@ -57,11 +57,11 @@ export default function Clients() {
 
         {/* Scrolling logos container */}
         <div className="relative w-full overflow-hidden">
-          {/* Left fade gradient */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white to-transparent z-10 pointer-events-none"></div>
+          {/* Left solid edge */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-white z-10 pointer-events-none"></div>
           
-          {/* Right fade gradient */}
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white to-transparent z-10 pointer-events-none"></div>
+          {/* Right solid edge */}
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-white z-10 pointer-events-none"></div>
 
           {/* Scrolling logos */}
           <div className="flex animate-scroll-left">

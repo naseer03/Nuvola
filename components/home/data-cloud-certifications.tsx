@@ -62,7 +62,7 @@ export default function DataCloudCertifications() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary text-balance leading-tight mb-4">
             Data & Cloud <span className="text-primary">Certifications</span>
           </h2>
-          <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6" />
+          <div className="h-1.5 w-24 bg-primary rounded-full mx-auto mb-6" />
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-12">
             Industry-recognized cloud and data credentials that support secure, scalable, and high-performance
             solutions.

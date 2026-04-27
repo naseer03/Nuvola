@@ -93,7 +93,7 @@ export default function Hero() {
                   aria-hidden="true"
                 />
               </div>
-              <span className="text-xs sm:text-sm font-bold bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent">
+              <span className="text-xs sm:text-sm font-bold text-accent">
                 Trusted by 100+ Global Enterprises
               </span>
             </div>
@@ -104,7 +104,7 @@ export default function Hero() {
                 Business With
               </span> */}
               <span
-                className="block mt-2 bg-gradient-to-r from-primary via-red-600 to-primary bg-clip-text text-transparent animate-slide-in-left bg-[length:200%_100%] animate-gradient-x"
+                className="block mt-2 text-primary animate-slide-in-left"
                 style={{ animationDelay: "0.2s" }}
               >
                & Support
@@ -129,7 +129,7 @@ export default function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-primary to-red-600 hover:from-red-600 hover:to-primary text-white text-base sm:text-lg px-8 sm:px-10 h-12 sm:h-14 rounded-full transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/40 duration-300 group relative overflow-hidden touch-manipulation"
+                className="bg-primary hover:bg-primary/90 text-white text-base sm:text-lg px-8 sm:px-10 h-12 sm:h-14 rounded-full transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/40 duration-300 group relative overflow-hidden touch-manipulation"
               >
                 <Link href="/contact">
                   <span className="relative z-10 flex items-center justify-center font-semibold">
@@ -187,7 +187,7 @@ export default function Hero() {
           >
             <div className="relative h-[600px]">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="absolute w-[450px] h-[450px] rounded-[4rem] bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 blur-2xl animate-spin-slow" />
+                <div className="absolute w-[450px] h-[450px] rounded-[4rem] bg-primary/20 blur-2xl animate-spin-slow" />
                 <div className="absolute w-[400px] h-[400px] rounded-full border-2 border-dashed border-accent/30 animate-spin-reverse" />
               </div>
 
@@ -213,11 +213,11 @@ export default function Hero() {
                     priority
                   />
                   {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/50 via-transparent to-primary/40 mix-blend-overlay" />
+                  <div className="absolute inset-0 bg-secondary/40 mix-blend-overlay" />
 
                   {/* Glass shine effect */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{ transform: `translateX(${mousePosition.x * 50}px)` }}
                   />
                 </div>
@@ -233,7 +233,7 @@ export default function Hero() {
               >
                 <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border-2 border-primary/20 hover:scale-110 hover:rotate-3 transition-all duration-500 cursor-default group">
                   <div className="flex items-center gap-4">
-                    <div className="relative w-16 h-16 bg-gradient-to-br from-primary to-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <div className="relative w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
                       <Database className="text-white" size={32} />
                       <div className="absolute -inset-1 bg-primary/30 rounded-2xl blur-md animate-pulse" />
                     </div>
@@ -258,7 +258,7 @@ export default function Hero() {
               >
                 <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border-2 border-accent/20 hover:scale-110 hover:-rotate-3 transition-all duration-500 cursor-default group">
                   <div className="flex items-center gap-4">
-                    <div className="relative w-16 h-16 bg-gradient-to-br from-accent to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <div className="relative w-16 h-16 bg-accent rounded-2xl flex items-center justify-center shadow-lg">
                       <Cloud className="text-white" size={32} />
                       <div className="absolute inset-0 bg-white/20 rounded-2xl animate-ping opacity-75" />
                     </div>

@@ -59,7 +59,7 @@ export default function Testimonials() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
+      className="py-20 lg:py-32 bg-white relative overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
@@ -69,9 +69,9 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary" />
+            <div className="h-px w-12 bg-primary/40" />
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">Testimonials</span>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary" />
+            <div className="h-px w-12 bg-primary/40" />
           </div>
           <h2
             className={`text-4xl lg:text-5xl font-bold text-secondary mb-6 text-balance transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -94,13 +94,13 @@ export default function Testimonials() {
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary to-primary/50 opacity-10 rounded-bl-full" />
+              <div className="absolute top-0 right-0 w-20 h-20 bg-primary opacity-10 rounded-bl-full" />
 
               <CardContent className="p-8 relative">
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center rotate-3 group-hover:rotate-6 transition-transform duration-500">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center rotate-3 group-hover:rotate-6 transition-transform duration-500">
                     <Quote className="text-primary" size={32} />
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export default function Testimonials() {
 
                 <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full blur-sm opacity-30 group-hover:opacity-50 transition-opacity" />
+                    <div className="absolute inset-0 bg-primary rounded-full blur-sm opacity-30 group-hover:opacity-50 transition-opacity" />
                     <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-white shadow-lg">
                       <Image
                         src={testimonial.image || "/placeholder.svg"}
@@ -151,7 +151,7 @@ export default function Testimonials() {
         >
           <div className="inline-flex flex-wrap items-center justify-center gap-8 px-8 py-6 bg-white rounded-2xl shadow-lg">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-lg">5.0</span>
               </div>
               <div className="text-left">

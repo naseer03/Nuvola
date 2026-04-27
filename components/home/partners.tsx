@@ -28,7 +28,7 @@ export default function Partners() {
     <section
       id="partners"
       ref={sectionRef}
-      className="py-20 lg:py-28 bg-gradient-to-b from-white via-slate-50/80 to-white relative overflow-hidden"
+      className="py-20 lg:py-28 bg-white relative overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(90vw,520px)] h-[min(90vw,520px)] rounded-full bg-primary/[0.06] blur-3xl" />
@@ -48,7 +48,7 @@ export default function Partners() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary text-balance leading-tight mb-4">
             Technology <span className="text-primary">Partnerships</span>
           </h2>
-          <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6" />
+          <div className="h-1.5 w-24 bg-primary rounded-full mx-auto mb-6" />
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-12">
             We work with leading platforms so your data and cloud initiatives are built on trusted, enterprise-grade
             foundations.
@@ -60,7 +60,7 @@ export default function Partners() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="relative w-full max-w-5xl bg-gradient-to-r from-white via-slate-50 to-white p-4 sm:p-6 md:p-8 shadow-2xl shadow-primary/10 ring-1 ring-slate-200/80 transition-transform duration-300 hover:-translate-y-1">
+          <div className="relative w-full max-w-5xl bg-white p-4 sm:p-6 md:p-8 shadow-2xl shadow-primary/10 ring-1 ring-slate-200/80 transition-transform duration-300 hover:-translate-y-1">
             <Image
               src="/patners-logo.png"
               alt="Snowflake AI Data Cloud Services Partner — Select tier badge"

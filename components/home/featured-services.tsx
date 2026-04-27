@@ -36,7 +36,7 @@ export default function FeaturedServices() {
       description: "Oracle, PostgreSQL, and cloud-native database management with optimization and migration services.",
       features: ["24/7 Support", "Migration Services", "Performance Tuning"],
       link: "/services#database",
-      gradient: "from-primary/20 via-red-500/10 to-transparent",
+      gradient: "bg-primary/10",
       iconBg: "bg-primary/10",
       accentColor: "primary",
       image: "/modern-database-servers-technology.jpg",
@@ -47,7 +47,7 @@ export default function FeaturedServices() {
       description: "AWS, Azure, and OCI cloud infrastructure design, migration, and management for scalable solutions.",
       features: ["Multi-Cloud", "Scalable Design", "Cost Optimization"],
       link: "/services#cloud",
-      gradient: "from-accent/20 via-blue-500/10 to-transparent",
+      gradient: "bg-accent/10",
       iconBg: "bg-accent/10",
       accentColor: "accent",
       image: "/cloud-computing-infrastructure-technology.jpg",
@@ -58,7 +58,7 @@ export default function FeaturedServices() {
       description: "Data warehousing, BI solutions, and advanced analytics to drive data-informed decisions.",
       features: ["Real-time Insights", "Data Visualization", "Predictive Analytics"],
       link: "/services#analytics",
-      gradient: "from-secondary/20 via-blue-700/10 to-transparent",
+      gradient: "bg-secondary/10",
       iconBg: "bg-secondary/10",
       accentColor: "secondary",
       image: "/business-analytics-dashboard-charts.jpg",
@@ -69,7 +69,7 @@ export default function FeaturedServices() {
       description: "Connect with top-tier technology talent from Guatemala and Central America.",
       features: ["Top Talent", "Fast Hiring", "Quality Assurance"],
       link: "/recruitment",
-      gradient: "from-primary/20 via-red-500/10 to-transparent",
+      gradient: "bg-primary/10",
       iconBg: "bg-primary/10",
       accentColor: "primary",
       image: "/diverse-technology-professionals-team.jpg",
@@ -80,7 +80,7 @@ export default function FeaturedServices() {
       description: "We design and build secure, scalable, and high-performance applications tailored to your business needs.",
       features: ["PLSQL", "APEX", "Python", "Java", "Streamlit"],
       link: "/services#security",
-      gradient: "from-accent/20 via-blue-500/10 to-transparent",
+      gradient: "bg-accent/10",
       iconBg: "bg-accent/10",
       accentColor: "accent",
       image: "/cybersecurity-protection-shield.png",
@@ -91,7 +91,7 @@ export default function FeaturedServices() {
       description: "Database and application optimization for maximum efficiency and speed.",
       features: ["Query Optimization", "Load Balancing", "Capacity Planning"],
       link: "/services#performance",
-      gradient: "from-secondary/20 via-blue-700/10 to-transparent",
+      gradient: "bg-secondary/10",
       iconBg: "bg-secondary/10",
       accentColor: "secondary",
       image: "/high-performance-computing-speed.jpg",
@@ -101,7 +101,7 @@ export default function FeaturedServices() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+      className="py-24 lg:py-32 bg-white relative overflow-hidden"
       aria-labelledby="services-heading"
     >
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl animate-pulse-slow" />
@@ -124,7 +124,7 @@ export default function FeaturedServices() {
             className={`text-4xl lg:text-5xl font-bold text-secondary mb-6 text-balance transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             Comprehensive IT Services from {" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
+            <span className="text-primary">
             Strategy to Support
             </span>
           </h2>
@@ -157,7 +157,7 @@ export default function FeaturedServices() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div
-                  className={`absolute inset-0 bg-gradient-to-t ${service.gradient} group-hover:opacity-80 transition-opacity duration-500`}
+                  className={`absolute inset-0 ${service.gradient} group-hover:opacity-80 transition-opacity duration-500`}
                   aria-hidden="true"
                 />
 
@@ -201,7 +201,7 @@ export default function FeaturedServices() {
                 </Link>
 
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
+                  className={`absolute inset-0 ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
                   aria-hidden="true"
                 />
               </CardContent>
@@ -213,7 +213,7 @@ export default function FeaturedServices() {
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-primary to-red-600 text-white hover:shadow-2xl hover:shadow-primary/30 transition-all hover:scale-105 duration-300 px-12 h-14 text-lg rounded-full group relative overflow-hidden touch-manipulation w-full sm:w-auto"
+            className="bg-primary text-white hover:shadow-2xl hover:shadow-primary/30 transition-all hover:scale-105 duration-300 px-12 h-14 text-lg rounded-full group relative overflow-hidden touch-manipulation w-full sm:w-auto"
           >
             <Link href="/services">
               <span className="relative z-10 flex items-center justify-center gap-2">
@@ -224,7 +224,7 @@ export default function FeaturedServices() {
                   aria-hidden="true"
                 />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </Button>
         </div>
